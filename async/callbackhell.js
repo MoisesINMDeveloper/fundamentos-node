@@ -1,23 +1,51 @@
 function hola(nombre, miCallback) {
-  setTimeout(function () {
-    console.log("Iniciando proceso...");
-    console.log("Hola, " + nombre);
+  setTimeout(() => {
+    console.log('Iniciando proceso...');
+    console.log('Hola, ' + nombre, '!!!');
     miCallback(nombre);
   }, 1000);
 }
 function adios(nombre, otroCallback) {
-  setTimeout(function () {
-    console.log("Adios, " + nombre);
+  setTimeout(() => {
+    console.log('Adios, ' + nombre, '!!!');
     otroCallback();
   }, 1000);
 }
 
-hola(
-  "Moises",
+function hablar(callbackHablar) {
+  setTimeout(() => {
+    console.log('Estoy hablando...');
+    callbackHablar();
+  }, 1000);
+}
+function conversacion(nombre, veces, callback) {
+  if (veces > 0) {
+    hablar(() => {
+      conversacion(nombre, --veces, callback);
+    });
+  } else {
+    adios(nombre, callback);
+  }
+}
+//--
+hola('Moises', (nombre) => {
+  conversacion(nombre, 3, () => {
+    console.log('Proceso terminado.');
+  });
+});
+
+/*hola(
+  'Moises',
   function (nombre) {
-    adios(nombre, function () {
-      console.log("terminando proceso");
+    hablar(() => {
+      hablar(() => {
+        hablar(() => {
+          adios(nombre, function () {
+            console.log('terminando proceso.');
+          });
+        });
+      });
     });
   },
   2000
-);
+);*/
