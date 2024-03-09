@@ -1,3 +1,36 @@
 Hola, yo soy un archivo
 
 y tengo varias lineas!!
+
+.
+├── components
+│   ├── atoms
+│   │   ├── Button.js
+│   │   ├── Input.js
+│   │   ├── Text.js
+│   │   └── ...
+│   ├── molecules
+│   │   ├── Form.js
+│   │   ├── Header.js
+│   │   ├── Footer.js
+│   │   └── ...
+│   └── organisms
+│       ├── HomePage.js
+│       ├── AboutPage.js
+│       ├── ContactPage.js
+│       └── ...
+├── pages
+│   ├── index.js
+│   ├── about.js
+│   ├── contact.js
+│   └── ...
+├── public
+│   ├── images
+│   ├── styles
+│   └── ...
+├── styles
+│   ├── Home.module.css
+│   ├── About.module.css
+│   ├── Contact.module.css
+│   └── ...
+└── ...
