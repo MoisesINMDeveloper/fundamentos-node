@@ -19,3 +19,4 @@ function funcion2() {
 console.log('empezamos');
 
 funcion1();
+
